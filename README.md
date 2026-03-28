@@ -63,3 +63,4 @@ admin / admin
 ```
 Check_Input → Issue_Found → Split_Record → Convert_to_parquet
 ```
+<img width="1919" height="621" alt="image" src="https://github.com/user-attachments/assets/b15b07db-4603-4397-b80b-f88200d338a3" />
