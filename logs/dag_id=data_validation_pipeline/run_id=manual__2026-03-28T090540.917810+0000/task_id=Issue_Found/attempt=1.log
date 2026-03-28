@@ -1,0 +1,24 @@
+[2026-03-28T09:05:42.753+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-03-28T09:05:42.778+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_validation_pipeline.Issue_Found manual__2026-03-28T09:05:40.917810+00:00 [queued]>
+[2026-03-28T09:05:42.785+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_validation_pipeline.Issue_Found manual__2026-03-28T09:05:40.917810+00:00 [queued]>
+[2026-03-28T09:05:42.786+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2026-03-28T09:05:42.797+0000] {taskinstance.py:2330} INFO - Executing <Task(BranchPythonOperator): Issue_Found> on 2026-03-28 09:05:40.917810+00:00
+[2026-03-28T09:05:42.804+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'data_validation_pipeline', 'Issue_Found', 'manual__2026-03-28T09:05:40.917810+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/pipeline_dag.py', '--cfg-path', '/tmp/tmpzaa5m8vl']
+[2026-03-28T09:05:42.804+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=246) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-03-28T09:05:42.806+0000] {standard_task_runner.py:91} INFO - Job 3: Subtask Issue_Found
+[2026-03-28T09:05:42.807+0000] {standard_task_runner.py:63} INFO - Started process 248 to run task
+[2026-03-28T09:05:42.859+0000] {task_command.py:426} INFO - Running <TaskInstance: data_validation_pipeline.Issue_Found manual__2026-03-28T09:05:40.917810+00:00 [running]> on host c35b9fd45c66
+[2026-03-28T09:05:42.922+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_validation_pipeline' AIRFLOW_CTX_TASK_ID='Issue_Found' AIRFLOW_CTX_EXECUTION_DATE='2026-03-28T09:05:40.917810+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-03-28T09:05:40.917810+00:00'
+[2026-03-28T09:05:42.923+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-03-28T09:05:42.933+0000] {baseoperator.py:399} WARNING - BranchPythonOperator.execute cannot be called outside TaskInstance!
+[2026-03-28T09:05:43.055+0000] {issue_found.py:43} INFO - Issue(s) detected (1). Routing to 'Split_Record'.
+  Column 'metascore' has 850 null value(s) (47.2%)
+[2026-03-28T09:05:43.057+0000] {python.py:237} INFO - Done. Returned value was: Split_Record
+[2026-03-28T09:05:43.057+0000] {branch.py:36} INFO - Branch into Split_Record
+[2026-03-28T09:05:43.058+0000] {skipmixin.py:178} INFO - Following branch Split_Record
+[2026-03-28T09:05:43.072+0000] {skipmixin.py:246} INFO - Skipping tasks []
+[2026-03-28T09:05:43.082+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-03-28T09:05:43.097+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=data_validation_pipeline, task_id=Issue_Found, run_id=manual__2026-03-28T09:05:40.917810+00:00, execution_date=20260328T090540, start_date=20260328T090542, end_date=20260328T090543
+[2026-03-28T09:05:43.141+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-03-28T09:05:43.161+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-03-28T09:05:43.164+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -1,0 +1,24 @@
+[2026-03-28T09:05:43.525+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-03-28T09:05:43.550+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_validation_pipeline.Split_Record manual__2026-03-28T09:05:40.917810+00:00 [queued]>
+[2026-03-28T09:05:43.558+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_validation_pipeline.Split_Record manual__2026-03-28T09:05:40.917810+00:00 [queued]>
+[2026-03-28T09:05:43.558+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2026-03-28T09:05:43.567+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): Split_Record> on 2026-03-28 09:05:40.917810+00:00
+[2026-03-28T09:05:43.573+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=249) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-03-28T09:05:43.574+0000] {standard_task_runner.py:63} INFO - Started process 251 to run task
+[2026-03-28T09:05:43.573+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'data_validation_pipeline', 'Split_Record', 'manual__2026-03-28T09:05:40.917810+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/pipeline_dag.py', '--cfg-path', '/tmp/tmp3o15ls1x']
+[2026-03-28T09:05:43.575+0000] {standard_task_runner.py:91} INFO - Job 4: Subtask Split_Record
+[2026-03-28T09:05:43.624+0000] {task_command.py:426} INFO - Running <TaskInstance: data_validation_pipeline.Split_Record manual__2026-03-28T09:05:40.917810+00:00 [running]> on host c35b9fd45c66
+[2026-03-28T09:05:43.684+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_validation_pipeline' AIRFLOW_CTX_TASK_ID='Split_Record' AIRFLOW_CTX_EXECUTION_DATE='2026-03-28T09:05:40.917810+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-03-28T09:05:40.917810+00:00'
+[2026-03-28T09:05:43.687+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-03-28T09:05:43.814+0000] {logging_mixin.py:188} WARNING - /opt/***/dags/tasks/split_record.py:50 FutureWarning: Passing literal json to 'read_json' is deprecated and will be removed in a future version. To read from a literal string, wrap it in a 'StringIO' object.
+[2026-03-28T09:05:43.824+0000] {split_record.py:56} INFO - Loaded DataFrame: 1800 rows x 6 cols
+[2026-03-28T09:05:43.826+0000] {split_record.py:63} INFO - Split result -> error rows (nulls in metascore etc.): 850 | clean rows: 950
+[2026-03-28T09:05:43.828+0000] {split_record.py:72} INFO -   Column 'metascore': 850 null(s) in error set
+[2026-03-28T09:05:43.840+0000] {split_record.py:78} INFO - Error records saved  -> /opt/***/data/errors/errors_manual__2026-03-28T09:05:40.917810+00:00.csv
+[2026-03-28T09:05:43.846+0000] {split_record.py:84} INFO - Clean records saved  -> /opt/***/data/clean/clean_manual__2026-03-28T09:05:40.917810+00:00.csv
+[2026-03-28T09:05:43.881+0000] {python.py:237} INFO - Done. Returned value was: None
+[2026-03-28T09:05:43.882+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-03-28T09:05:43.889+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=data_validation_pipeline, task_id=Split_Record, run_id=manual__2026-03-28T09:05:40.917810+00:00, execution_date=20260328T090540, start_date=20260328T090543, end_date=20260328T090543
+[2026-03-28T09:05:43.909+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-03-28T09:05:43.925+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-03-28T09:05:43.927+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
